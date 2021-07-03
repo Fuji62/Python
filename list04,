@@ -1,0 +1,50 @@
+#list04 要素数20のフィボナッチ数列を実現するリスト
+elements = int(input("要素数->"))
+sequence = [0] * elements
+sequence[0] = 1
+sequence[1] = 1
+
+for i in range(elements - 2):
+    sequence[i + 2] = sequence[i] + sequence[i + 1]
+
+print(sequence)
+
+
+
+#***************************************************************************************
+
+#list05 リストにデータを追加及び削除するプログラム
+
+name_list = []
+
+while True:
+    try:
+        process_number = int(input('処理番号を指定してください(1:追加 2:削除 9:終了)->'))
+    except ValueError: 
+        print('処理番号は数値で入力してください！')
+        continue
+    
+    if process_number == 9:
+        print('終了しました')
+        break
+        
+    elif process_number != 1 and process_number != 2:
+        print('処理番号は1または2で入力してください')
+        continue
+    
+    name = input('氏名を入力してください->')
+    if process_number == 1:
+        name_list.append(name)
+    elif process_number == 2:
+        if len(name_list) == 0:
+            print('name_listは空です')
+            continue
+        else: name_list.remove(name)
+    print(name_list)
+    
+ 
+#***************************************************************************************
+
+
+
+
