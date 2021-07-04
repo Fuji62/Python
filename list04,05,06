@@ -45,6 +45,41 @@ while True:
  
 #***************************************************************************************
 
+#list06 リストを用いてキューを実現する
+
+queue = []
+
+while True:
+    try:
+        process_number = int(input('処理番号を指定してください(1:エンキュー 2:デキュー 9:終了)->'))
+    except ValueError: 
+        print('処理番号は数値で入力してください！')
+        continue
+    
+    if process_number == 9:
+        print('終了しました')
+        break
+        
+    elif process_number != 1 and process_number != 2:
+        print('処理番号は1または2で入力してください')
+        continue
+    
+    if process_number == 1:
+        number = input('数値を入力してください->')
+        queue.append(number)
+    
+    elif process_number == 2:
+        if len(queue) == 0:
+            print('queueは空です')
+            continue
+        else:
+            pop = queue.pop(0)
+            print('取り出されたデータ', pop)
+    print('キュー=', queue)
+        
+
+
+
 
 
 
