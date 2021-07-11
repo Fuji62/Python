@@ -1,0 +1,42 @@
+#html.py
+
+fr = open('./html.txt', mode="r", encoding="utf-8")
+w = fr.read()
+print(w)
+print('-' * 30)
+
+w = w.replace('\n', '')
+w = w.replace(' ', '')
+
+while True:
+    begin = w.find('<')
+    last  = w.find('>') 
+    #タグが存在しなければ終了
+    if begin == -1: break
+    #タグの開始から終了までを削除する
+    w = w[:begin] + ',' + w[last + 1:]
+
+    words = w.split(',')
+    
+for data in words:
+    if len(data) > 0: print(data)
+   
+#-------------------------------------------------------
+#html.txt
+
+<html>
+    <head>
+        <title>スクレイピング</title>
+        <body>
+            <h1>初めてのホームページ</h1>
+            <p>こんにちは</p>
+            <ul>
+                <li><a>アニョハセヨ</a><a>カムサハムニダ</a></li>
+                <li>グーテンターク</li>
+                <li>ボンジュール</li>
+            </ul>
+        </body>
+    </head>
+</html>
+
+
