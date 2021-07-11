@@ -1,0 +1,12 @@
+import random
+
+num = 100
+score_list = []
+for i in range(num):
+    score = random.randint(-10, 50)
+    score_list.append(score)
+
+score_list.sort()
+print('飛び賞=', score_list[9::10])
+print('ブービー賞=', score_list[-2])
+print('トップ３=', score_list[:3])
