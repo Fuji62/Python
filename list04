@@ -1,0 +1,35 @@
+sentence.txt
+
+For example, one chilly night I was on a mountain hike with some students.
+I told them that we were going to have to cross a mountain stream.
+
+
+
+---------------------------------------------------------------------------
+list.py
+
+
+fr = open("sentence.txt", "r", encoding="UTF-8")
+w = []
+sentence = fr.read()
+fr.close()
+
+while sentence != "\n":
+    start = sentence.find("w")
+    delete = sentence[:start]
+    sentence = sentence.replace(delete, "")
+    end = sentence.find(" ")
+    w.append(sentence[:end])
+    sentence = sentence.replace(w[0], "")
+
+
+
+print(start)
+print(end)
+
+
+
+
+print(w)
+print(sentence)
+
