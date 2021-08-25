@@ -212,3 +212,19 @@ r1, r2, r3 = calc(arr)
 print('最高点=', r1, '最低点=', r2, '平均点=', round(r3, 2))
 
 #--------------------------------------------------------
+
+#proc12 未
+
+import math
+def calc(r):
+    if (type(r) == <class 'int'>) or (type(r) == <class 'float'>):
+        sin = round(math.sin(math.radians(r)), 3)
+        cos = round(math.cos(math.radians(r)), 3)
+        tan = round(math.tan(math.radians(r)), 3)
+        return sin, cos, tan
+    else: return None, None, None
+
+r = input('角度を入力してください->')
+r1,r2,r3 = calc(r)
+print('sin=', r1, 'cos=', r2, 'tan=', r3)
+
