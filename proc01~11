@@ -187,6 +187,28 @@ print('result=9', result9)
 
 #--------------------------------------------------------
 
+#proc11
 
+#関数calc
+def calc(arr):
+    return max(arr), min(arr), sum(arr) / len(arr)
+
+#入力処理
+arr = []
+while True:
+    try:
+        score = input('点数を入力(0～100 999で終了)->')
+        score = int(score)
+        if score == 999: break;
+        elif not(0 <= score <= 100):
+            print('点数は0～100の範囲で入力してください！')
+            continue
+        else: arr.append(score)
+    except ValueError:
+        print('整数で入力してください！')
+        continue
+
+r1, r2, r3 = calc(arr)
+print('最高点=', r1, '最低点=', r2, '平均点=', round(r3, 2))
 
 #--------------------------------------------------------
