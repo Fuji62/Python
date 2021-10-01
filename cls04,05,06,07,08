@@ -94,7 +94,41 @@ lexus2.giveOil()
 lexus2.disp()
 
 #----------------------------------------------------------------
-#
+#cls07
+class Kyodai:
+    myoji = '西村'
+    sogaku = 0
+    
+    @classmethod
+    def cyokin(cls, kin):
+        cls.sogaku += kin
+        print(f'貯金額:{kin:,}円 総額{cls.sogaku:,}')
+        
+    def __init__(self, namae):
+        self.namae = namae
+    
+    def hyoji(self):
+        print('苗　　字:', Kyodai.myoji)
+        print('名　　前:', self.namae)
+        print('貯金総額:', Kyodai.sogaku)
+        
+kazuhiko = Kyodai('和彦')
+takaaki = Kyodai('隆明')
+suzuka = Kyodai('涼花')
+
+kazuhiko.cyokin(1500)
+takaaki.cyokin(700)
+suzuka.cyokin(1250)
+
+print('='*20)
+kazuhiko.hyoji01()
+kazuhiko.hyoji02()
+print('='*20)
+takaaki.hyoji01()
+takaaki.hyoji02()
+print('='*20)
+suzuka.hyoji01()
+suzuka.hyoji02()
 
 #----------------------------------------------------------------
 #
