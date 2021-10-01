@@ -47,7 +47,7 @@ kokura.zogen(-20)
 kokura.hyoji()
 
 #----------------------------------------------------------------
-#toyota0.py
+#toyota.py
 class Lexus:
     def __init__(self, color='赤', fuel=50, distance=0):
         self.name = 'レクサス'
