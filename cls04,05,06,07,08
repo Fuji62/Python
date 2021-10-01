@@ -1,0 +1,122 @@
+#gisenkou.py
+class Fukuoka:
+    def __init__(self, nendo, ninzu):
+        self.koumei = '福岡高等技術専門校'
+        self.nendo = nendo
+        self.ninzu = ninzu
+        
+    def zogen(self, ninzu):
+        self.ninzu += ninzu
+        
+    def hyoji(self):
+        print('校名:', self.koumei)
+        print('年度:', self.nendo)
+        print('人数:', self.ninzu)
+
+class Kokura:
+    def __init__(self, nendo, ninzu):
+        self.koumei = '小倉高等技術専門校'
+        self.nendo = nendo
+        self.ninzu = ninzu
+        
+    def zogen(self, ninzu):
+        self.ninzu += ninzu
+        
+    def hyoji(self):
+        print('校名:', self.koumei)
+        print('年度:', self.nendo)
+        print('人数:', self.ninzu)
+        
+#----------------------------------------------------------------
+#cls04
+import gisenkou
+import importlib
+
+importlib.reload(gisenkou)
+from gisenkou import Fukuoka, Kokura
+
+fukuoka = Fukuoka('令和3年', 192)
+kokura = Kokura('令和2年', 98)
+
+fukuoka.zogen(15)
+fukuoka.zogen(-38)
+fukuoka.hyoji()
+
+kokura.zogen(7)
+kokura.zogen(-20)
+kokura.hyoji()
+
+#----------------------------------------------------------------
+#toyota0.py
+class Lexus:
+    def __init__(self, color='赤', fuel=50, distance=0):
+        self.name = 'レクサス'
+        self.color = color
+        self.fuel = fuel
+        self.distance = distance
+    def drive(self, distance):
+        if self.fuel >= distance / 20:
+            self.fuel -= distance / 20
+            self.distance += distance
+            print(self.distance, '走行しました')
+        else:
+            print(f"予定走行距離:{distance} 残燃料:{self.fuel} 燃料が足りません!")
+    def giveOil(self):
+        self.fuel = 100
+    def disp(self):
+        print('車　種　:', self.name)
+        print('色　　　:', self.color)
+        print('残燃料　:', self.fuel, 'ℓ')
+        print('走行距離:', self.distance, 'km')
+
+#----------------------------------------------------------------
+#cls05
+import toyota
+import importlib
+
+importlib.reload(toyota)
+from toyota import Lexus
+
+lexus1 = Lexus()
+lexus2 = Lexus('white', 100, 35_000)
+
+lexus1.drive(300)
+lexus1.drive(800)
+lexus1.giveOil()
+lexus1.drive(500)
+lexus1.drive(800)
+lexus1.disp()
+print()
+lexus2.drive(1000)
+lexus2.drive(500)
+lexus2.drive(1000)
+lexus2.giveOil()
+lexus2.disp()
+
+#----------------------------------------------------------------
+#
+
+#----------------------------------------------------------------
+#
+
+#----------------------------------------------------------------
+#
+
+#----------------------------------------------------------------
+#
+
+#----------------------------------------------------------------
+#
+
+#----------------------------------------------------------------
+#
+
+#----------------------------------------------------------------
+#
+
+#----------------------------------------------------------------
+#
+
+#----------------------------------------------------------------
+
+#----------------------------------------------------------------
